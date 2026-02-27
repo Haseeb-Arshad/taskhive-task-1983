@@ -1,0 +1,133 @@
+{
+  "project_type": "nextjs",
+  "scaffold_command": "npx create-next-app@latest ./ --typescript --tailwind --eslint --app --no-src-dir --import-alias @/* --yes",
+  "steps": [
+    {
+      "step_number": 1,
+      "description": "Configure project with glassmorphism styling and core dependencies",
+      "commit_message": "chore: setup tailwind config and dependencies",
+      "files": [
+        {
+          "path": "tailwind.config.ts",
+          "description": "Configure glassmorphism plugins and theme extensions"
+        },
+        {
+          "path": "app/globals.css",
+          "description": "Add custom glassmorphism utilities and base styles"
+        },
+        {
+          "path": "package.json",
+          "description": "Add @radix-ui components, @tiptap editor, and upload libraries"
+        }
+      ]
+    },
+    {
+      "step_number": 2,
+      "description": "Define blog post data model and local storage service",
+      "commit_message": "feat: add blog post types and storage layer",
+      "files": [
+        {
+          "path": "lib/types.ts",
+          "description": "BlogPost interface with metadata and content structure"
+        },
+        {
+          "path": "lib/storage.ts",
+          "description": "LocalStorage CRUD operations for blog posts"
+        },
+        {
+          "path": "lib/image-handler.ts",
+          "description": "Image upload and base64 conversion utilities"
+        }
+      ]
+    },
+    {
+      "step_number": 3,
+      "description": "Build rich text editor with image embedding and auto-save",
+      "commit_message": "feat: implement tiptap-based blog editor",
+      "files": [
+        {
+          "path": "components/editor/BlogEditor.tsx",
+          "description": "Main editor component with tiptap integration"
+        },
+        {
+          "path": "components/editor/ImageUploader.tsx",
+          "description": "Drag-and-drop image upload with preview"
+        },
+        {
+          "path": "hooks/useAutoSave.ts",
+          "description": "Auto-save draft functionality"
+        }
+      ]
+    },
+    {
+      "step_number": 4,
+      "description": "Create glassmorphism UI component system",
+      "commit_message": "feat: build glassmorphism design system",
+      "files": [
+        {
+          "path": "components/ui/GlassCard.tsx",
+          "description": "Reusable glassy card container with blur backdrop"
+        },
+        {
+          "path": "components/ui/GlassButton.tsx",
+          "description": "Glassmorphism button with hover effects"
+        },
+        {
+          "path": "components/ui/GlassInput.tsx",
+          "description": "Styled input with glass appearance"
+        },
+        {
+          "path": "components/layout/Header.tsx",
+          "description": "Minimalistic header with glass styling"
+        }
+      ]
+    },
+    {
+      "step_number": 5,
+      "description": "Build blog management pages and workflow",
+      "commit_message": "feat: add dashboard and editor pages",
+      "files": [
+        {
+          "path": "app/dashboard/page.tsx",
+          "description": "Blog post list with create/edit actions"
+        },
+        {
+          "path": "app/editor/[id]/page.tsx",
+          "description": "Edit existing blog post route"
+        },
+        {
+          "path": "app/editor/new/page.tsx",
+          "description": "Create new blog post route"
+        },
+        {
+          "path": "components/blog/BlogPreview.tsx",
+          "description": "Live preview component for posts"
+        }
+      ]
+    },
+    {
+      "step_number": 6,
+      "description": "Add tests and performance optimizations",
+      "commit_message": "test: add unit tests and finalize UI polish",
+      "files": [
+        {
+          "path": "__tests__/BlogEditor.test.tsx",
+          "description": "Editor functionality tests"
+        },
+        {
+          "path": "__tests__/storage.test.ts",
+          "description": "Storage layer tests"
+        },
+        {
+          "path": "app/layout.tsx",
+          "description": "Root layout with metadata and theme"
+        },
+        {
+          "path": "components/PerformanceProvider.tsx",
+          "description": "Image optimization and lazy loading"
+        }
+      ]
+    }
+  ],
+  "test_command": "npm test"
+}
